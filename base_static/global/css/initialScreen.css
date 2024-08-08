@@ -1,0 +1,346 @@
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+img {
+  z-index: -1;
+}
+
+.title {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-right: 8px solid transparent;
+  width: 400px;
+  overflow: hidden;
+  z-index: 2;
+  font-weight: bold;
+  font-size: 5rem;
+  animation: typewriter 0.5s steps(8), blink 0.8s steps(8);
+}
+
+.subtitle {
+  z-index: 2;
+  text-align: center;
+  font-size: 2rem;
+}
+
+a {
+  z-index: 2;
+
+  text-decoration: none;
+}
+
+/* From Uiverse.io by gharsh11032000 */
+.animated-button {
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: var(--darkColor);
+  box-shadow: 0 0 0 2px var(--darkColor);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: var(--darkColor);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .arr-1 {
+  right: 16px;
+}
+
+.animated-button .arr-2 {
+  left: -25%;
+}
+
+.animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--darkColor);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: var(--bgColor);
+  border-radius: 12px;
+}
+
+.animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.animated-button:hover svg {
+  fill: var(--bgColor);
+}
+
+.animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px var(--darkColor);
+}
+
+.animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* From Uiverse.io by wilsondesouza */
+ul {
+  list-style: none;
+  position: fixed; /* ou 'absolute' dependendo do caso */
+  bottom: 20px;
+  right: 20px;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 400px;
+  }
+}
+
+@keyframes blink {
+  0% {
+    border-right-color: var(--darkColor);
+  }
+
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+/* ------------- GIRO -------------  */
+
+.container {
+  filter: blur(3px);
+}
+
+.central {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.orbiter {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -15px;
+  animation: orbit 10s linear infinite;
+  z-index: -1;
+}
+
+/* Adiciona a animação */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
+  }
+}
+
+/* Define o valor do atraso da animação e o raio de órbita para cada orbiter */
+.orbiter:nth-child(1) {
+  --radius: 400px;
+  animation-delay: -4.56s;
+}
+.orbiter:nth-child(2) {
+  --radius: 500px;
+  animation-delay: -5.67s;
+}
+.orbiter:nth-child(3) {
+  --radius: 550px;
+  animation-delay: -7.33s;
+}
+.orbiter:nth-child(4) {
+  --radius: 600px;
+  animation-delay: -5s;
+}
+.orbiter:nth-child(5) {
+  --radius: 300px;
+  animation-delay: -9.67s;
+}
+.orbiter:nth-child(6) {
+  --radius: 600px;
+  animation-delay: -8.33s;
+}
+.orbiter:nth-child(7) {
+  --radius: 500px;
+  animation-delay: -0.33s;
+}
+.orbiter:nth-child(8) {
+  --radius: 550px;
+  animation-delay: -6.56s;
+}
+.orbiter:nth-child(9) {
+  --radius: 450px;
+  animation-delay: -3.45s;
+}
+.orbiter:nth-child(10) {
+  --radius: 300px;
+  animation-delay: -1.33s;
+}
+.orbiter:nth-child(11) {
+  --radius: 300px;
+  animation-delay: -6s;
+}
+.orbiter:nth-child(12) {
+  --radius: 500px;
+  animation-delay: -1.67s;
+}
+.orbiter:nth-child(13) {
+  --radius: 700px;
+  animation-delay: -4.33s;
+}
+.orbiter:nth-child(14) {
+  --radius: 550px;
+  animation-delay: -2.33s;
+}
+/* Continue adicionando até y elementos, ajustando o raio e o atraso */
