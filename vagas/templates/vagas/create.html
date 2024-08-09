@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'global/css/vagasform.css' %}" />
+    <title>Criar vaga</title>
+  </head>
+  <body>
+    <h1 class="title">Crie sua vaga</h1>
+    <form action="" enctype="multipart/form-data" method="post">
+      {% csrf_token %} {% for field in form %}
+      <div class="form-content">
+        <div class="form-group">
+          <label for="{{ label.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+        </div>
+      </div>
+      {% endfor %}
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </body>
+</html>

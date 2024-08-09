@@ -1,0 +1,43 @@
+.title {
+  margin: 30px;
+  font-size: 3em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+}
+
+label {
+  margin-bottom: 5px;
+  margin-top: 20px;
+  display: block;
+  font-weight: bolder;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  min-height: 30px;
+  padding: 10px;
+}
+
+input:focus,
+textarea:focus {
+  border: 3px solid var(--mediumColor);
+}
+
+button {
+  border: none;
+  background-color: var(--mediumColor);
+  margin: auto;
+  margin: 40px;
+  color: var(--brColor);
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 30%;
+}
