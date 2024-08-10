@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from vagas.forms import VagasForm
+from .models import Vaga
 
 
 # Create your views here.
@@ -24,3 +25,10 @@ def create(request):
     context = {"form": VagasForm()}
 
     return render(request, "vagas/create.html", context=context)
+
+
+def vagas(request):
+
+    vagas = Vaga.objects.all()
+
+    return render(request, "vagas/vagas.html", {"vagas": vagas})

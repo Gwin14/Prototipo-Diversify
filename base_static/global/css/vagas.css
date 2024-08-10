@@ -1,0 +1,18 @@
+
+
+.vaga {
+  width: 60%;
+  box-shadow: 0px 0px 20px #0000004b;
+  border-radius: 10px;
+  margin: auto;
+  padding: 25px;
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.description {
+  margin-top: 20px;
+}
+

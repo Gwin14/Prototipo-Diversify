@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'global/css/vagas.css' %}" />
+    <title>Todas as vagas</title>
+  </head>
+  <body>
+    <h1>Todas as vagas</h1>
+    {% for vaga in vagas %}
+    <section class="vaga">
+      <h2 class="title">{{ vaga.title }}</h2>
+      <hr/>
+      <p class="description">{{ vaga.description }}</p>
+      <p class="salary">{{ vaga.salary }}</p>
+      <p class="experience_years">{{ vaga.experience_years }}</p>
+      <p class="location">{{ vaga.location }}</p>
+      <h3 class="company_name">{{ vaga.company_name }}</h3>
+      <p class="company_description">{{ vaga.company_description }}</p>
+      <p class="company_website">{{ vaga.company_website }}</p>
+    </section>
+
+    {% endfor %}
+  </body>
+</html>

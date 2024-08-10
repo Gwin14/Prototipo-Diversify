@@ -11,7 +11,8 @@
   <body>
     <h1 class="title">Crie sua vaga</h1>
     <form action="" enctype="multipart/form-data" method="post">
-      {% csrf_token %} {% for field in form %}
+      {% csrf_token %} 
+      {% for field in form %}
       <div class="form-content">
         <div class="form-group">
           <label for="{{ label.id_for_label }}">{{ field.label }}</label>
