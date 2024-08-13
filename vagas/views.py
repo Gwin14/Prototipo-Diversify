@@ -18,7 +18,7 @@ def create(request):
 
         if form.is_valid():
             form.save()
-            return redirect("create")
+            return redirect("vagas")
 
         return render(request, "vagas/create.html", context=context)
 
@@ -29,6 +29,6 @@ def create(request):
 
 def vagas(request):
 
-    vagas = Vaga.objects.all()
+    vagas = Vaga.objects.all().order_by('-date_created')
 
     return render(request, "vagas/vagas.html", {"vagas": vagas})

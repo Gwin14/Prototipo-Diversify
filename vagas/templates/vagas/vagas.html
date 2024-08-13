@@ -13,16 +13,30 @@
     {% for vaga in vagas %}
     <section class="vaga">
       <h2 class="title">{{ vaga.title }}</h2>
-      <hr/>
-      <p class="description">{{ vaga.description }}</p>
-      <p class="salary">{{ vaga.salary }}</p>
-      <p class="experience_years">{{ vaga.experience_years }}</p>
-      <p class="location">{{ vaga.location }}</p>
-      <h3 class="company_name">{{ vaga.company_name }}</h3>
-      <p class="company_description">{{ vaga.company_description }}</p>
-      <p class="company_website">{{ vaga.company_website }}</p>
+      <hr />
+      <section class="vaga-abstract">
+        <p class="salary va">Salário: R${{ vaga.salary }}</p>
+        <p class="company_name va">Empresa: {{ vaga.company_name }}</p>
+      </section>
+      <section class="vaga-option">
+        <label for="checkboxInput" class="bookmark">
+          <input type="checkbox" id="checkboxInput" />
+          <svg
+            width="15"
+            viewBox="0 0 50 70"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="svgIcon"
+          >
+            <path
+              d="M46 62.0085L46 3.88139L3.99609 3.88139L3.99609 62.0085L24.5 45.5L46 62.0085Z"
+              stroke="black"
+              stroke-width="7"
+            ></path>
+          </svg>
+        </label>
+      </section>
     </section>
-
     {% endfor %}
   </body>
 </html>
