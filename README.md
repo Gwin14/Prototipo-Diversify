@@ -4,16 +4,16 @@ Bem-vindo ao projeto **Prototipo-Diversify**, um sistema desenvolvido em Django 
 
 ## Funcionalidades
 
-- [Funcionalidade 1: ex. Sistema de cadastro de vagas inclusivas]
-- [Funcionalidade 2: ex. Filtro de candidatos com base em critérios de diversidade]
-- [Funcionalidade 3: ex. Interface para visualização de relatórios de diversidade]
+- [Funcionalidade 1: Sistema de cadastro de vagas inclusivas]
+- [Funcionalidade 2: Filtro de candidatos com base em critérios de diversidade]
+- [Funcionalidade 3: Interface para visualização de relatórios de diversidade]
   
 ## Tecnologias Utilizadas
 
 - **Back-end:** Django (Python)
 - **Front-end:** HTML, CSS
-- **Banco de Dados:** [Informe o banco de dados, ex.: PostgreSQL, SQLite]
-- **Outros:** [Liste outras tecnologias importantes, ex.: Docker]
+- **Banco de Dados:** Sem
+- **Outros:** -----
 
 ## Pré-requisitos
 
