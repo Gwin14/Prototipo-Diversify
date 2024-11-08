@@ -1,12 +1,12 @@
 # Prototipo-Diversify
 
-Bem-vindo ao projeto **Prototipo-Diversify**, um sistema desenvolvido em Django com o objetivo de [descrever brevemente o objetivo, ex.: "facilitar a gestão de diversidade em ambientes de trabalho, promovendo oportunidades iguais e inclusão."]
+Bem-vindo ao projeto **Prototipo-Diversify**, um sistema desenvolvido em Django com o objetivo de facilitar a gestão de diversidade em ambientes de trabalho, promovendo oportunidades iguais e inclusão.
 
 ## Funcionalidades
 
-- [Funcionalidade 1: Sistema de cadastro de vagas inclusivas]
-- [Funcionalidade 2: Filtro de candidatos com base em critérios de diversidade]
-- [Funcionalidade 3: Interface para visualização de relatórios de diversidade]
+- Funcionalidade 1: Sistema de cadastro de vagas inclusivas
+- Funcionalidade 2: Filtro de candidatos com base em critérios de diversidade
+- Funcionalidade 3: Interface para visualização de relatórios de diversidade
   
 ## Tecnologias Utilizadas
 
