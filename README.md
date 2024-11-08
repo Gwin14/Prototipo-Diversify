@@ -1,4 +1,3 @@
-```markdown
 # Prototipo-Diversify
 
 Bem-vindo ao projeto **Prototipo-Diversify**, um sistema desenvolvido em Django com o objetivo de [descrever brevemente o objetivo, ex.: "facilitar a gestão de diversidade em ambientes de trabalho, promovendo oportunidades iguais e inclusão."]
