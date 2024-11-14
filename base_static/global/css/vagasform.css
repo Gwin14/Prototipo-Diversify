@@ -4,8 +4,7 @@
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+  columns: 2;
   width: 60%;
   margin: auto;
 }
