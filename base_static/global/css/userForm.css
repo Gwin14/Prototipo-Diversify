@@ -1,0 +1,108 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  :root {
+    --bgColor: #f2f2f2;
+    --darkColor: #004651;
+    --lightColor: #A4E473;
+    --mediumColor: #00A181;
+  }
+  
+  body {
+    background-color: var(--bgColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  ::selection {
+    background-color: var(--mediumColor);
+    color: var(--bgColor);
+  }
+  
+  /* Estilos para o formulário */
+  .form-container {
+    background-color: var(--bgColor);
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--mediumColor);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    color: var(--darkColor);
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .form-container label {
+    color: var(--darkColor);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .form-container input[type="text"],
+  .form-container input[type="email"],
+  .form-container input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--mediumColor);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: var(--darkColor);
+    background-color: #fff;
+    transition: border-color 0.3s;
+  }
+  
+  .form-container input[type="text"]:focus,
+  .form-container input[type="email"]:focus,
+  .form-container input[type="password"]:focus {
+    border-color: var(--darkColor);
+  }
+  
+  .form-container input[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--mediumColor);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-container input[type="submit"]:hover {
+    background-color: var(--darkColor);
+  }
+  
+  /* Estilos para links de navegação (opcional) */
+  .form-container .form-footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  
+  .form-container .form-footer a {
+    color: var(--mediumColor);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .form-container .form-footer a:hover {
+    color: var(--darkColor);
+  }
+  

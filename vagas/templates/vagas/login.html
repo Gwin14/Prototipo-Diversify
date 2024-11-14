@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'global/css/userForm.css' %}" />
+  <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
+
+  <title>Document</title>
+</head>
+<body>
+
+
+<form 
+      action="{{form_action}}"
+      method="POST"
+    >
+    {% csrf_token %}
+
+    {% for field in form %}
+      <div class="form-content">
+        <div class="form-group">
+          <label for="{{ label.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {{ field.errors }}
+        </div>
+      </div>
+    {% endfor %}
+
+      
+
+      <div class="form-content">
+        <div class="form-group">
+          <button class="btn" type="submit">Send</button>
+        </div>
+      </div>
+
+    </form>
+
+  </body>
+  </html>
