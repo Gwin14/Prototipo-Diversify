@@ -83,6 +83,9 @@ def logout_view(request):
 
 
 def user_update(request):
+
+    
+    
     form = RegisterUpdateForm(instance=request.user)
 
     if request.method != 'POST':
@@ -107,3 +110,18 @@ def user_update(request):
 
     form.save()
     return redirect('user_update')
+
+
+def vaga(request, vaga_id):
+
+    vaga = Vaga.objects.get(pk=vaga_id)
+
+    context = {
+        'vaga': vaga,
+    }
+
+    return render(
+        request,
+        'vagas/vaga.html',
+        context=context
+    )

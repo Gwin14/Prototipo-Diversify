@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
+    path('<int:vaga_id>/', views.vaga, name='vaga'),
     # CRUD methods
     path("vagas/", views.vagas, name="vagas"),
     path("create/", views.create, name="create"),

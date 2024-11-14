@@ -11,6 +11,8 @@
   <body>
     <h1>Todas as vagas</h1>
     {% for vaga in vagas %}
+    <a class="table-link" href="{% url "vaga" vaga.id %}">
+
     <section class="vaga">
       <h2 class="title">{{ vaga.title }}</h2>
       <hr />
@@ -37,6 +39,7 @@
         </label>
       </section>
     </section>
+  </a>
     {% endfor %}
   </body>
 </html>

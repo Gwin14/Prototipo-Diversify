@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'global/css/vaga.css' %}" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="single-job">
+        <h1 class="single-job-title">
+            {{ vaga.title }}
+        </h1>
+        
+        <p><b>ID:</b> {{ vaga.id }}</p>
+        <p><b>Descrição:</b> {{ vaga.description }}</p>
+        <p><b>Data de Criação:</b> {{ vaga.date_created }}</p>
+        <p><b>Salário:</b> R$ {{ vaga.salary }}</p>
+        <p><b>Anos de Experiência:</b> {{ vaga.experience_years }}</p>
+        <p><b>Localização:</b> {{ vaga.location }}</p>
+        <p><b>Nome da Empresa:</b> {{ vaga.company_name }}</p>
+        <p><b>Descrição da Empresa:</b> {{ vaga.company_description }}</p>
+        <p><b>Site da Empresa:</b> <a href="{{ vaga.company_website }}">{{ vaga.company_website }}</a></p>
+        <p><b>Tags:</b> 
+            {% for tag in vaga.tags.all %}
+                <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        <p><b>Dono:</b> {{ vaga.owner.username }}</p>
+    </div>
+</body>
+</html>

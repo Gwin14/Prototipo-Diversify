@@ -1,0 +1,51 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1.single-job-title {
+  text-align: center;
+  padding: 40px;
+  font-size: 3em;
+  color: var(--darkColor);
+}
+
+.single-job {
+  width: 60%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  margin: auto;
+  padding: 25px;
+  margin-bottom: 30px;
+  background-color: var(--bgColor);
+}
+
+.single-job p {
+  margin: 10px 0;
+  color: var(--darkColor);
+  font-size: 1.1em;
+}
+
+.single-job p b {
+  color: var(--darkColor);
+}
+
+.salary,
+.company_name {
+  color: var(--darkColor);
+  font-weight: bold;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background-color: var(--lightColor);
+  color: var(--darkColor);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
