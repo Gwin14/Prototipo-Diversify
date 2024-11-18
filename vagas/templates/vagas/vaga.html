@@ -1,15 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="https://cdn.userway.org/widget.js" data-account="63D8wlAGwf"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
-    <link rel="stylesheet" href="{% static 'global/css/vaga.css' %}" />
-    <title>Document</title>
-</head>
-<body>
+{% extends "global/base.html" %}
+
+{% block head %}
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'global/css/vaga.css' %}" />
+  <link rel="stylesheet" href="{% static 'global/css/header.css' %}" />
+
+  {% endblock head %}
+
+  {% block body %}
+
+  {% include 'vagas/partials/_header.html' %}
+
     <div class="single-job">
         <h1 class="single-job-title">
             {{ vaga.title }}
@@ -32,9 +34,4 @@
         <p><b>Dono:</b> {{ vaga.owner.username }}</p>
     </div>
 
- <!-- -->
- {% include 'vagas/partials/_vlibras.html' %}
- <!-- -->
-
-</body>
-</html>
+    {% endblock body %}

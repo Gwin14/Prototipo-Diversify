@@ -1,5 +1,7 @@
 body {
   display: block !important;
+  overflow-y: auto !important;
+  padding-bottom: 30px;
 }
 
 a {

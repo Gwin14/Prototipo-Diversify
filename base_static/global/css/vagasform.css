@@ -1,3 +1,7 @@
+body{
+  overflow-y: auto;
+}
+
 .title {
   margin: 30px;
   font-size: 3em;
@@ -5,7 +9,7 @@
 
 form {
   columns: 2;
-  width: 60%;
+  width: 70%;
   margin: auto;
 }
 

@@ -1,15 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="https://cdn.userway.org/widget.js" data-account="63D8wlAGwf"></script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'global/css/global.css' %}" />
-    <link rel="stylesheet" href="{% static 'global/css/vagasform.css' %}" />
-    <title>Criar vaga</title>
-  </head>
-  <body>
+{% extends "global/base.html" %}
+
+{% block head %}
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'global/css/vagasForm.css' %}" />
+  <link rel="stylesheet" href="{% static 'global/css/header.css' %}" />
+
+  {% endblock head %}
+
+  {% block body %}
+
+  {% include 'vagas/partials/_header.html' %}
+
     <h1 class="title">Crie sua vaga</h1>
     <form action="" enctype="multipart/form-data" method="post">
       {% csrf_token %} 
@@ -24,9 +26,4 @@
       <button class="btn" type="submit">Send</button>
     </form>
 
-      <!-- -->
-  {% include 'vagas/partials/_vlibras.html' %}
-  <!-- -->
-  
-  </body>
-</html>
+    {% endblock body %}
