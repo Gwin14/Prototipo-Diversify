@@ -32,6 +32,13 @@
             {% endfor %}
         </p>
         <p><b>Dono:</b> {{ vaga.owner.username }}</p>
+
+        {% if request.user == vaga.owner %}
+          <form action="{% url 'delete' vaga.id %}" method="POST">
+              {% csrf_token %}
+              <button class="btn-delete" type="submit">Delete</button>
+          </form>
+      {% endif %}
     </div>
 
     {% endblock body %}

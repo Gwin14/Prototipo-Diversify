@@ -5,7 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import auth
 from vagas.forms import RegisterUpdateForm
 from vagas.forms import RegisterForm
-
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -13,6 +13,7 @@ def index(request):
     return render(request, "vagas/index.html")
 
 
+@login_required(login_url='register')
 def create(request):
 
     if request.method == "POST":
@@ -77,15 +78,15 @@ def login_view(request):
         context=context
     )
 
+
 def logout_view(request):
     auth.logout(request)
     return redirect('login')
 
 
+@login_required(login_url='register')
 def user_update(request):
 
-    
-    
     form = RegisterUpdateForm(instance=request.user)
 
     if request.method != 'POST':
@@ -112,6 +113,7 @@ def user_update(request):
     return redirect('user_update')
 
 
+@login_required(login_url='register')
 def vaga(request, vaga_id):
 
     vaga = Vaga.objects.get(pk=vaga_id)
@@ -125,3 +127,9 @@ def vaga(request, vaga_id):
         'vagas/vaga.html',
         context=context
     )
+
+@login_required(login_url='register')
+def delete(request, vaga_id):
+    vaga = Vaga.objects.get(pk=vaga_id)
+    vaga.delete()
+    return redirect('vagas')

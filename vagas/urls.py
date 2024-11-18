@@ -7,6 +7,7 @@ urlpatterns = [
     # CRUD methods
     path("vagas/", views.vagas, name="vagas"),
     path("create/", views.create, name="create"),
+    path('delete/<int:vaga_id>/', views.delete, name='delete'),
     # Login
     path('user/create/', views.register, name='register'),
     path('user/login/', views.login_view, name='login'),
