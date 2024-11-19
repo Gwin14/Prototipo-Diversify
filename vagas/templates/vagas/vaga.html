@@ -26,18 +26,27 @@
         <p><b>Nome da Empresa:</b> {{ vaga.company_name }}</p>
         <p><b>Descrição da Empresa:</b> {{ vaga.company_description }}</p>
         <p><b>Site da Empresa:</b> <a href="{{ vaga.company_website }}">{{ vaga.company_website }}</a></p>
-        <p><b>Tags:</b> 
+        {% comment %} <p><b>Tags:</b> 
             {% for tag in vaga.tags.all %}
                 <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}
             {% endfor %}
-        </p>
-        <p><b>Dono:</b> {{ vaga.owner.username }}</p>
+        </p> {% endcomment %}
+        
 
         {% if request.user == vaga.owner %}
+        <p><b>Dono:</b> {{ vaga.owner.username }}</p>
           <form action="{% url 'delete' vaga.id %}" method="POST">
               {% csrf_token %}
               <button class="btn-delete" type="submit">Delete</button>
           </form>
+
+          {% else %}
+
+          <form action="" method="POST">
+            {% csrf_token %}
+            <button class="btn-apply" type="submit">Apply</button>
+        </form>
+
       {% endif %}
     </div>
 

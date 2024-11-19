@@ -6,6 +6,7 @@ from django.contrib import auth
 from vagas.forms import RegisterUpdateForm
 from vagas.forms import RegisterForm
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 
 # Create your views here.
@@ -13,23 +14,47 @@ def index(request):
     return render(request, "vagas/index.html")
 
 
+def search(request):
+    search_value = request.GET.get('q', '').strip()
+
+    if search_value == '':
+        return redirect('index')
+
+    # A busca nas tags deve ser feita dessa forma
+    vagas = Vaga.objects\
+        .filter(
+            Q(title__icontains=search_value) |
+            Q(salary__icontains=search_value) |
+            Q(location__icontains=search_value) |
+            Q(company_name__icontains=search_value) |
+            Q(tags__name__icontains=search_value)  # Busca nas tags associadas
+        )\
+        .distinct()  # Garantir que as vagas não se repitam
+
+    context = {
+        'vagas': vagas,
+    }
+
+    return render(request, 'vagas/vagas.html', context=context)
+
 @login_required(login_url='register')
+
+
 def create(request):
 
     if request.method == "POST":
-
         form = VagasForm(request.POST)
-
         context = {"form": form}
 
         if form.is_valid():
-            form.save()
+            vaga = form.save(commit=False)
+            vaga.owner = request.user
+            vaga.save()
             return redirect("vagas")
 
         return render(request, "vagas/create.html", context=context)
 
     context = {"form": VagasForm()}
-
     return render(request, "vagas/create.html", context=context)
 
 

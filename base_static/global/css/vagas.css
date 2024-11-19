@@ -16,6 +16,28 @@ h1 {
   font-size: 3em;
 }
 
+.search-form{
+  width: 40%;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-input{
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  min-height: 30px;
+  padding: 10px;
+}
+
+.search-input:focus{
+  border: 3px solid var(--mediumColor);
+}
+
 .vaga {
   width: 60%;
   box-shadow: 0px 0px 20px #0000004b;
@@ -81,3 +103,4 @@ h1 {
     stroke-dasharray: 200 0;
   }
 }
+

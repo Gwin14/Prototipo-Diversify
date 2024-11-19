@@ -13,6 +13,11 @@
   {% include 'vagas/partials/_header.html' %}
 
     <h1>Todas as vagas</h1>
+
+    <form class="search-form" action="{% url "search" %}" method="get">
+      <input type="search" class="search-input" placeholder="Search" name="q" id="search"> 
+  </form>
+
     {% for vaga in vagas %}
     <a class="table-link" href="{% url "vaga" vaga.id %}">
 

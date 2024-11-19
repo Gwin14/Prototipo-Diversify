@@ -56,12 +56,20 @@ h1.single-job-title {
   font-size: 0.9em;
 }
 
-.btn-delete{
+.btn-delete, .btn-apply{
  padding: 10px;
- background-color: red;
+
  color: white;
  border: none;
  border-radius: 5px;
  cursor: pointer;
  margin-top: 10px;
+}
+
+.btn-delete{
+  background-color: red;
+}
+
+.btn-apply{
+  background-color: var(--darkColor);
 }
