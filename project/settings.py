@@ -77,8 +77,12 @@ WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "defaultdb",
+        "USER": "avnadmin",
+        "PASSWORD": "AVNS_-s71ZJXv6HgeqXa9Lnc",
+        "HOST": "diversify-bookmarking.c.aivencloud.com",
+        "PORT": "24091",
     }
 }
 
@@ -128,7 +132,7 @@ STATIC_ROOT = BASE_DIR / "static"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://localhost:8000',
-    'http://localhost:8000', 
-    'https://potential-pancake-575grr9r5wrc496q-8000.app.github.dev'
-        ]
+    "https://localhost:8000",
+    "http://localhost:8000",
+    "https://potential-pancake-575grr9r5wrc496q-8000.app.github.dev",
+]

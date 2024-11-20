@@ -15,31 +15,28 @@ def index(request):
 
 
 def search(request):
-    search_value = request.GET.get('q', '').strip()
+    search_value = request.GET.get("q", "").strip()
 
-    if search_value == '':
-        return redirect('index')
+    if search_value == "":
+        return redirect("index")
 
     # A busca nas tags deve ser feita dessa forma
-    vagas = Vaga.objects\
-        .filter(
-            Q(title__icontains=search_value) |
-            Q(salary__icontains=search_value) |
-            Q(location__icontains=search_value) |
-            Q(company_name__icontains=search_value) |
-            Q(tags__name__icontains=search_value)  # Busca nas tags associadas
-        )\
-        .distinct()  # Garantir que as vagas não se repitam
+    vagas = Vaga.objects.filter(
+        Q(title__icontains=search_value)
+        | Q(salary__icontains=search_value)
+        | Q(location__icontains=search_value)
+        | Q(company_name__icontains=search_value)
+        | Q(tags__name__icontains=search_value)  # Busca nas tags associadas
+    ).distinct()  # Garantir que as vagas não se repitam
 
     context = {
-        'vagas': vagas,
+        "vagas": vagas,
     }
 
-    return render(request, 'vagas/vagas.html', context=context)
-
-@login_required(login_url='register')
+    return render(request, "vagas/vagas.html", context=context)
 
 
+@login_required(login_url="register")
 def create(request):
 
     if request.method == "POST":
@@ -60,7 +57,7 @@ def create(request):
 
 def vagas(request):
 
-    vagas = Vaga.objects.all().order_by('-date_created')
+    vagas = Vaga.objects.all().order_by("-date_created")
 
     return render(request, "vagas/vagas.html", {"vagas": vagas})
 
@@ -68,93 +65,74 @@ def vagas(request):
 def register(request):
     form = RegisterForm()
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = RegisterForm(request.POST)
 
         if form.is_valid():
             form.save()
 
     context = {
-        'form': form,
+        "form": form,
     }
 
-    return render(request, 'vagas/registerForm.html', context=context)
+    return render(request, "vagas/registerForm.html", context=context)
 
 
 def login_view(request):
     form = AuthenticationForm(request)
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
         form = AuthenticationForm(request, data=request.POST)
 
         if form.is_valid():
             user = form.get_user()
             auth.login(request, user)
-            return redirect('index')
+            return redirect("index")
 
     context = {
-        'form': form,
+        "form": form,
     }
 
-    return render(
-        request,
-        'vagas/login.html',
-        context=context
-    )
+    return render(request, "vagas/login.html", context=context)
 
 
 def logout_view(request):
     auth.logout(request)
-    return redirect('login')
+    return redirect("login")
 
 
-@login_required(login_url='register')
+@login_required(login_url="register")
 def user_update(request):
 
     form = RegisterUpdateForm(instance=request.user)
 
-    if request.method != 'POST':
-        return render(
-            request,
-            'vagas/user_update.html',
-            {
-                'form': form
-            }
-        )
+    if request.method != "POST":
+        return render(request, "vagas/user_update.html", {"form": form})
 
     form = RegisterUpdateForm(data=request.POST, instance=request.user)
 
     if not form.is_valid():
-        return render(
-            request,
-            'user_update.html',
-            {
-                'form': form
-            }
-        )
+        return render(request, "user_update.html", {"form": form})
 
     form.save()
-    return redirect('user_update')
+    return redirect("user_update")
 
 
-@login_required(login_url='register')
+@login_required(login_url="register")
 def vaga(request, vaga_id):
 
     vaga = Vaga.objects.get(pk=vaga_id)
 
     context = {
-        'vaga': vaga,
+        "vaga": vaga,
     }
 
-    return render(
-        request,
-        'vagas/vaga.html',
-        context=context
-    )
+    return render(request, "vagas/vaga.html", context=context)
 
-@login_required(login_url='register')
+
+@login_required(login_url="register")
 def delete(request, vaga_id):
     vaga = Vaga.objects.get(pk=vaga_id)
     vaga.delete()
-    return redirect('vagas')
+    return redirect("vagas")
