@@ -70,6 +70,7 @@ def register(request):
 
         if form.is_valid():
             form.save()
+            return redirect("vagas")
 
     context = {
         "form": form,
@@ -116,7 +117,7 @@ def user_update(request):
         return render(request, "user_update.html", {"form": form})
 
     form.save()
-    return redirect("user_update")
+    return redirect("vagas")
 
 
 @login_required(login_url="register")

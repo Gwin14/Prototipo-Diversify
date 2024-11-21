@@ -1,3 +1,8 @@
+body{
+  overflow-y: auto !important;
+  justify-content: flex-start !important;
+}
+
 .title {
   margin: 30px;
   font-size: 3em;
@@ -40,4 +45,45 @@ button {
   padding: 10px 20px;
   border-radius: 10px;
   width: 30%;
+}
+
+/* Adicionando media queries para responsividade */
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 2em;
+    margin: 20px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  button {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.8em;
+    margin: 15px;
+  }
+
+  form {
+    width: 95%;
+  }
+
+  button {
+    width: 80%;
+  }
+
+  input,
+  textarea {
+    padding: 8px;
+  }
+
+  label {
+    margin-top: 15px;
+    margin-bottom: 3px;
+  }
 }

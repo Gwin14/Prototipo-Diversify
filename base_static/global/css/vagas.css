@@ -104,3 +104,41 @@ h1 {
   }
 }
 
+@media (max-width: 768px) {
+  .search-form {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 2em;
+    padding: 20px;
+  }
+
+  .vaga {
+    width: 85%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+    padding: 15px;
+  }
+
+  .search-input {
+    margin-bottom: 15px;
+    padding: 8px;
+  }
+
+  .vaga {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .bookmark {
+    width: 35px;
+    height: 35px;
+  }
+}
+

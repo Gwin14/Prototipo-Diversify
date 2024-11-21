@@ -1,11 +1,18 @@
 <header>
   <nav class="headerNav">
+    <button class="menuButton" aria-label="Menu">
+      <div class="menuIcon"></div>
+    </button>
     <ul class="headerUl">
       <li class="headerLink"><a href="{% url 'vagas' %}">Home</a></li>
       <li class="headerLink"><a href="{% url 'create' %}">Create job</a></li>
       <li class="headerLink"><a href="{% url 'login' %}">Login</a></li>
       <li class="headerLink"><a href="{% url 'logout' %}">Logout</a></li>
-      <li class="headerLink"><a href="{% url 'vagas' %}">{{ user.first_name }}</a></li>
+      <li class="headerLink">
+        <a href="{% url 'user_update' %}">{{ user.first_name }}</a>
+      </li>
     </ul>
   </nav>
+
+
 </header>

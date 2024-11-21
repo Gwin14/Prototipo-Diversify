@@ -13,5 +13,14 @@
     {% block body %}{% endblock body %}
 
     {% include 'vagas/partials/_vlibras.html' %}
+
+    <script>
+        document
+          .querySelector(".menuButton")
+          .addEventListener("click", function () {
+            const menu = document.querySelector(".headerUl");
+            menu.classList.toggle("active");
+          });
+      </script>
 </body>
 </html>

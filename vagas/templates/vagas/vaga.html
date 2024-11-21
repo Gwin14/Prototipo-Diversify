@@ -18,14 +18,14 @@
         </h1>
         
         <p><b>ID:</b> {{ vaga.id }}</p>
-        <p><b>Descrição:</b> {{ vaga.description }}</p>
-        <p><b>Data de Criação:</b> {{ vaga.date_created }}</p>
-        <p><b>Salário:</b> R$ {{ vaga.salary }}</p>
-        <p><b>Anos de Experiência:</b> {{ vaga.experience_years }}</p>
-        <p><b>Localização:</b> {{ vaga.location }}</p>
-        <p><b>Nome da Empresa:</b> {{ vaga.company_name }}</p>
-        <p><b>Descrição da Empresa:</b> {{ vaga.company_description }}</p>
-        <p><b>Site da Empresa:</b> <a href="{{ vaga.company_website }}">{{ vaga.company_website }}</a></p>
+        <p><b>Description:</b> {{ vaga.description }}</p>
+        <p><b>Creation Date:</b> {{ vaga.date_created }}</p>
+        <p><b>Salary:</b> R$ {{ vaga.salary }}</p>
+        <p><b>Experience Years:</b> {{ vaga.experience_years }}</p>
+        <p><b>Location:</b> {{ vaga.location }}</p>
+        <p><b>Company Name:</b> {{ vaga.company_name }}</p>
+        <p><b>Company Description:</b> {{ vaga.company_description }}</p>
+        <p><b>Company Website:</b> <a href="{{ vaga.company_website }}">{{ vaga.company_website }}</a></p>
         {% comment %} <p><b>Tags:</b> 
             {% for tag in vaga.tags.all %}
                 <span class="tag">{{ tag }}</span>{% if not forloop.last %}, {% endif %}

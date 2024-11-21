@@ -12,13 +12,13 @@
 
   {% include 'vagas/partials/_header.html' %}
 
-  <h1 class="title">Entre na sua conta</h1>
-
 <form 
       action="{{form_action}}"
       method="POST"
     >
     {% csrf_token %}
+
+    <h1 class="title">Entre na sua conta</h1>
 
     {% for field in form %}
       <div class="form-content">

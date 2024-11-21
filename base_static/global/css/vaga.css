@@ -1,6 +1,5 @@
 body {
   display: block !important;
-  margin-top: 50px;
   overflow-y: auto !important;
   padding-bottom: 30px;
 }
@@ -24,6 +23,31 @@ h1.single-job-title {
   margin: auto;
   padding: 25px;
   margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .single-job {
+    width: 90%;
+    padding: 15px;
+  }
+
+  h1.single-job-title {
+    padding: 20px;
+    font-size: 2em;
+  }
+
+  .single-job p {
+    font-size: 1em;
+  }
+
+  .tags {
+    justify-content: center;
+  }
+
+  .btn-delete, .btn-apply {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
 
 .single-job p {
