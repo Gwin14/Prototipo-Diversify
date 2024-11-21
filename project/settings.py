@@ -82,14 +82,15 @@ WSGI_APPLICATION = "project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "defaultdb",
-        "USER": "avnadmin",
-        "PASSWORD": "AVNS_-s71ZJXv6HgeqXa9Lnc",
-        "HOST": "diversify-bookmarking.c.aivencloud.com",
-        "PORT": "24091",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "railway",  # Nome do banco de dados
+        "USER": "postgres",  # Usuário do banco
+        "PASSWORD": "kaTkQicvvEIfsEoBqVELTRalvDpNlTjd",  # Senha do banco
+        "HOST": "autorack.proxy.rlwy.net",  # Apenas o endereço do host
+        "PORT": "30023",  # Porta correta fornecida na URL
     }
 }
+
 
 
 # Password validation
