@@ -1,15 +1,18 @@
 body{
-  overflow-y: auto;
+  overflow-y: auto !important;
+  justify-content: flex-start !important;
 }
 
 .title {
   margin: 30px;
-  font-size: 3em;
+  font-size: 2em; 
+  text-align: center; 
 }
 
 form {
-  columns: 2;
-  width: 70%;
+  columns: 1; 
+  width: 90%; 
+  max-width: 600px; 
   margin: auto;
 }
 
@@ -32,15 +35,32 @@ textarea {
 input:focus,
 textarea:focus {
   border: 3px solid var(--mediumColor);
+  outline: none; 
 }
 
 button {
   border: none;
   background-color: var(--mediumColor);
-  margin: auto;
-  margin: 40px;
+  margin: 20px auto; 
   color: var(--brColor);
   padding: 10px 20px;
   border-radius: 10px;
-  width: 30%;
+  width: 60%; 
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3em;
+  }
+
+  form {
+    columns: 2; 
+    width: 90%;
+    max-width: 1000px;
+  }
+
+  button {
+    width: 80%;
+  }
 }
