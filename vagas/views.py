@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from vagas.forms import VagasForm
 from .models import Vaga
 from django.contrib.auth.forms import AuthenticationForm
@@ -7,6 +7,7 @@ from vagas.forms import RegisterUpdateForm
 from vagas.forms import RegisterForm
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from .utils.recommendation import gerar_recomendacoes
 
 
 # Create your views here.
@@ -137,3 +138,21 @@ def delete(request, vaga_id):
     vaga = Vaga.objects.get(pk=vaga_id)
     vaga.delete()
     return redirect("vagas")
+
+
+
+#--------------------------------------------------
+#--------------------------------------------------
+
+def detalhe_vaga(request, vaga_id):
+    vaga = get_object_or_404(Vaga, id=vaga_id)
+    recomendacoes = gerar_recomendacoes(vaga_id)
+
+    # Debugging
+    print("Vaga:", vaga)
+    print("Recomendações:", recomendacoes)
+
+    return render(request, 'vagas/vaga.html', {
+        'vaga': vaga,
+        'recomendacoes': recomendacoes
+    })

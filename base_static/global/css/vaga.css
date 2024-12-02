@@ -1,7 +1,8 @@
 body {
-  display: block !important;
   overflow-y: auto !important;
   padding-bottom: 30px;
+  align-items: center !important;
+  margin: 40px !important;
 }
 
 a {
@@ -80,20 +81,61 @@ h1.single-job-title {
   font-size: 0.9em;
 }
 
-.btn-delete, .btn-apply{
- padding: 10px;
-
- color: white;
- border: none;
- border-radius: 5px;
- cursor: pointer;
- margin-top: 10px;
+.btn-delete, .btn-apply {
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.btn-delete{
+.btn-delete {
   background-color: red;
 }
 
-.btn-apply{
+.btn-apply {
   background-color: var(--darkColor);
+}
+
+/* Estilos para as Vagas Recomendadas com Grid Responsivo */
+
+.titulo-vagas {
+  text-align: center;
+  font-size: 2.5em;
+  color: var(--darkColor);
+  margin-bottom: 20px;
+}
+
+.lista-vagas {
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Define o número de colunas */
+  gap: 20px; /* Espaço entre os itens */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-vaga {
+  background-color: var(--bgColor);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.link-vaga {
+  font-size: 1.2em;
+  color: var(--darkColor);
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.link-vaga:hover {
+  background-color: var(--darkColor);
+  color: white;
 }

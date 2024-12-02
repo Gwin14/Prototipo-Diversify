@@ -50,4 +50,17 @@
       {% endif %}
     </div>
 
+    <h2 class="titulo-vagas">Vagas Recomendadas</h2>
+    <ul class="lista-vagas">
+        {% for recomendacao in recomendacoes %}
+            <li class="item-vaga">
+                <a href="{% url 'vaga' recomendacao.id %}" class="link-vaga">
+                    {{ recomendacao.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+  
+
     {% endblock body %}

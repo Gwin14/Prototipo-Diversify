@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("<int:vaga_id>/", views.vaga, name="vaga"),
+    path("vaga/<int:vaga_id>/", views.detalhe_vaga, name="vaga"),
     path("search/", views.search, name="search"),
     # CRUD methods
     path("vagas/", views.vagas, name="vagas"),
@@ -14,4 +14,7 @@ urlpatterns = [
     path("user/login/", views.login_view, name="login"),
     path("user/logout/", views.logout_view, name="logout"),
     path("user/update/", views.user_update, name="user_update"),
+
+
+
 ]
